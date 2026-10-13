@@ -31,12 +31,5 @@ public class RectangleQuadrat {
         else {
             System.out.println("No és un quadrat");
         }
-
-
-
-
-
-
-
     }
 }

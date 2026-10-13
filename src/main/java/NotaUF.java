@@ -27,13 +27,5 @@ public class NotaUF {
         else {
             System.out.println("Suspés");
         }
-
-
-
-
-
-
-
-
     }
 }

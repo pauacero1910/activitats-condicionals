@@ -23,18 +23,5 @@ public class PositiuNegatiuZero {
         if (numero==0) {
             System.out.println("El número és 0");
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
