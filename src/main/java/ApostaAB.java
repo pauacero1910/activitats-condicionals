@@ -9,12 +9,11 @@ public class ApostaAB {
         // TODO: genera dos números aleatoris A i B (no els mostris encara)
         //   Pregunta per qui aposta l'usuari (A o B); guanya el número més alt
         //   Mostra els dos valors i si ha guanyat o perdut l'aposta
-
- 
+        
         Random generador = new Random();
 
-        int A = generador.nextInt(100) + 1; 
-        int B = generador.nextInt(100) + 1;
+        int A = generador.nextInt(10) + 1; 
+        int B = generador.nextInt(10) + 1;
 
         Scanner teclat = new Scanner (System.in);
 
@@ -32,7 +31,7 @@ public class ApostaAB {
                 System.out.println("Has perdut !!!");
             }
         } 
-        if (B>A) {
+        else if (B>A) {
             if (resposta1 == 'B') {
             System.out.println("Has guanyat !!!");
             }
@@ -40,6 +39,8 @@ public class ApostaAB {
                 System.out.println("Has perdut !!!");
             }
         }
-
+        else {
+    System.out.println("Empat! No has guanyat l'aposta.");
     }
+}
 }

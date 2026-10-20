@@ -9,35 +9,37 @@ public class CaixerComissio {
         //   Si (quantitat + comissió) > saldo -> "No es pot fer la retirada. Saldo insuficient."
         //   Si no, mostra la quantitat, la comissió (si n'hi ha) i el saldo restant
 
-        Scanner teclat = new Scanner (System.in);
+        Scanner teclat = new Scanner(System.in);
 
-        double saldo_actual;
         System.out.println("Saldo actual: ");
-        saldo_actual = teclat.nextDouble();
+        double saldo_actual = teclat.nextDouble();
 
-        double quantitat_treure;
         System.out.println("Quantitat a treure: ");
-        quantitat_treure = teclat.nextDouble();
+        double quantitat_treure = teclat.nextDouble();
 
-        char caixer_propi;
         System.out.println("Fas servir caixer propi? (S/N)");
-        caixer_propi = teclat.next().charAt(0);
+        char caixer_propi = teclat.next().charAt(0);
 
-        double comissió = (quantitat_treure * 0.05) ;
-        double quantitatComissió = quantitat_treure + comissió;
+        double comissio = 0;
 
-        if (quantitatComissió > saldo_actual) {
+        if (caixer_propi == 'N') {
+            comissio = quantitat_treure * 0.05;
+        }
+
+        double total = quantitat_treure + comissio;
+
+        if (total > saldo_actual) {
             System.out.println("No es pot fer la retirada. Saldo insuficient.");
-        }
-        else if (caixer_propi == 'S') {
+        } else {
             System.out.println("Quantitat retirada: " + quantitat_treure);
-            System.out.println("Saldo restant: " + (saldo_actual - quantitat_treure));
-        }
-        else if ( caixer_propi == 'N') {
-            System.out.println("Quantitat retirada: " + quantitat_treure);
-            System.out.println("Commissió: 5%");
-            System.out.println("Saldo restant: " + (saldo_actual - (quantitat_treure + comissió)) );
+
+            if (comissio > 0) {
+                System.out.println("Comissió: " + comissio);
+            }
+
+            System.out.println("Saldo restant: " + (saldo_actual - total));
         }
 
+        teclat.close();
     }
 }

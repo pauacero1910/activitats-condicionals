@@ -25,10 +25,10 @@ public class PedraPaperTisora {
             ordinador = "paper" ;
         }
         else {
-            ordinador = "tisores";
+            ordinador = "tisora";
         }
 
-        System.out.println("Tria pedra, paper o tisores: ");
+        System.out.println("Tria pedra, paper o tisora: ");
         String usuari = teclat.nextLine();  
 
         System.out.println("L'ordinador a triat: " + ordinador);
@@ -37,9 +37,9 @@ public class PedraPaperTisora {
             System.out.println("Empat");
         }
         else if (
-            (usuari.equals("pedra") && ordinador.equals("tisores")) || 
+            (usuari.equals("pedra") && ordinador.equals("tisora")) || 
             (usuari.equals("paper") && ordinador.equals("pedra")) || 
-            (usuari.equals("tisores") && ordinador.equals("paper")) 
+            (usuari.equals("tisora") && ordinador.equals("paper")) 
         ) {
             System.out.println("Has guanyat !!!");
         }
